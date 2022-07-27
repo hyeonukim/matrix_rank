@@ -9821,23 +9821,27 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Container static method variant of ivy.matrix_rank.</span>
-<span class="sd">    This method returns the rank (i.e., number of non-zero singular values) of a matrix (or a stack of</span>
-<span class="sd">    matrices).</span>
+<span class="sd">    This method returns the rank (i.e., number of non-zero singular values)</span>
+<span class="sd">    of a matrix (or a stack of matrices).</span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
+<span class="sd">    </span>
 <span class="sd">    x</span>
-<span class="sd">        input array or container having shape ``(..., M, N)`` and whose innermost two dimensions form</span>
-<span class="sd">        ``MxN`` matrices. Should have a floating-point data type.</span>
+<span class="sd">        input array or container having shape ``(..., M, N)`` and whose innermost</span>
+<span class="sd">        two dimensions form ``MxN`` matrices. Should have a floating-point data </span>
+<span class="sd">        type.</span>
 <span class="sd">    rtol</span>
-<span class="sd">        relative tolerance for small singular values. Singular values approximately less</span>
-<span class="sd">        than or equal to ``rtol * largest_singular_value`` are set to zero. If a</span>
-<span class="sd">        ``float``, the value is equivalent to a zero-dimensional array having a</span>
-<span class="sd">        floating-point data type determined by :ref:`type-promotion` (as applied to</span>
-<span class="sd">        ``x``) and must be broadcast against each matrix. If an ``array``, must have a</span>
-<span class="sd">        floating-point data type and must be compatible with ``shape(x)[:-2]`` (see</span>
-<span class="sd">        :ref:`broadcasting`). If ``None``, the default value is ``max(M, N) * eps``,</span>
-<span class="sd">        where ``eps`` must be the machine epsilon associated with the floating-point</span>
-<span class="sd">        data type determined by :ref:`type-promotion` (as applied to ``x``).</span>
+<span class="sd">        relative tolerance for small singular values. Singular values</span>
+<span class="sd">        approximately less than or equal to ``rtol * largest_singular_value`` are</span>
+<span class="sd">        set to zero. If a ``float``, the value is equivalent to a zero-dimensional</span>
+<span class="sd">        array having a floating-point data type determined by :ref:`type-promotion` </span>
+<span class="sd">        (as applied to ``x``) and must be broadcast against each matrix. If an </span>
+<span class="sd">        ``array``, must have a floating-point data type and must be compatible with</span>
+<span class="sd">        ``shape(x)[:-2]`` (see:ref:`broadcasting`). If ``None``, the default value</span>
+<span class="sd">        is ``max(M, N) * eps``, where ``eps`` must be the machine epsilon associated</span>
+<span class="sd">        with the floating-point data type determined by :ref:`type-promotion`</span>
+<span class="sd">        (as applied to ``x``).</span>
 <span class="sd">        Default: ``None``.    </span>
 <span class="sd">    key_chains</span>
 <span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
@@ -9850,17 +9854,20 @@
 <span class="sd">    map_sequences</span>
 <span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">    out</span>
-<span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
-<span class="sd">        inputs broadcast to.</span>
+<span class="sd">        optional output array, for writing the result to. It must have a shape that</span>
+<span class="sd">        the inputs broadcast to.</span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
+
 <span class="sd">    ret</span>
-<span class="sd">        a container containing the ranks. The returned array must have a floating-point</span>
-<span class="sd">        data type determined by :ref:`type-promotion` and must have shape ``(...)``</span>
-<span class="sd">        (i.e., must have a shape equal to ``shape(x)[:-2]``).</span>
+<span class="sd">        a container containing the ranks. The returned array must have a </span>
+<span class="sd">        floating-point data type determined by :ref:`type-promotion` and must have </span>
+<span class="sd">        shape ``(...)`` (i.e., must have a shape equal to ``shape(x)[:-2]``).</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+
 <span class="sd">    With :code: `ivy.Container` input:</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[1., 0.], [0., 1.]]), \</span>
@@ -9871,16 +9878,6 @@
 <span class="sd">        a: ivy.array(2.),</span>
 <span class="sd">        b: ivy.array(1.)</span>
 <span class="sd">    }</span>
-<span class="sd">    return ContainerBase.multi_map_in_static_method(</span>
-<span class="sd">        &quot;matrix_rank&quot;,</span>
-<span class="sd">        x,</span>
-<span class="sd">        rtol,</span>
-<span class="sd">        key_chains=key_chains,</span>
-<span class="sd">        to_apply=to_apply,</span>
-<span class="sd">        prune_unapplied=prune_unapplied,</span>
-<span class="sd">        map_sequences=map_sequences,</span>
-<span class="sd">        out=out,</span>
-<span class="sd">    )</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -9897,24 +9894,24 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Container instance method variant of ivy.matrix_rank.</span>
-<span class="sd">    This method returns the rank (i.e., number of non-zero singular values) of a matrix (or a stack of</span>
-<span class="sd">    matrices).</span>
+<span class="sd">    This method returns the rank (i.e., number of non-zero singular values)</span>
+<span class="sd">    of a matrix (or a stack of matrices).</span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    self</span>
-<span class="sd">        input container having shape ``(..., M, N)`` and whose innermost two dimensions form</span>
-<span class="sd">        ``MxN`` matrices. Should have a floating-point data type.</span>
+<span class="sd">        input container having shape ``(..., M, N)`` and whose innermost two </span>
+<span class="sd">        dimensions form ``MxN`` matrices. Should have a floating-point data type.</span>
 <span class="sd">    rtol</span>
-<span class="sd">        relative tolerance for small singular values. Singular values approximately less</span>
-<span class="sd">        than or equal to ``rtol * largest_singular_value`` are set to zero. If a</span>
-<span class="sd">        ``float``, the value is equivalent to a zero-dimensional array having a</span>
+<span class="sd">        relative tolerance for small singular values. Singular values approximately</span>
+<span class="sd">        less than or equal to ``rtol * largest_singular_value`` are set to zero. If</span>
+<span class="sd">        a ``float``, the value is equivalent to a zero-dimensional array having a</span>
 <span class="sd">        floating-point data type determined by :ref:`type-promotion` (as applied to</span>
-<span class="sd">        ``x``) and must be broadcast against each matrix. If an ``array``, must have a</span>
-<span class="sd">        floating-point data type and must be compatible with ``shape(x)[:-2]`` (see</span>
-<span class="sd">        :ref:`broadcasting`). If ``None``, the default value is ``max(M, N) * eps``,</span>
-<span class="sd">        where ``eps`` must be the machine epsilon associated with the floating-point</span>
-<span class="sd">        data type determined by :ref:`type-promotion` (as applied to ``x``).</span>
-<span class="sd">        Default: ``None``.        </span>
+<span class="sd">        ``x``) and must be broadcast against each matrix. If an ``array``, must have</span>
+<span class="sd">        a floating-point data type and must be compatible with ``shape(x)[:-2]`` </span>
+<span class="sd">        (see :ref:`broadcasting`). If ``None``, the default value is </span>
+<span class="sd">        ``max(M, N) * eps``, where ``eps`` must be the machine epsilon associated </span>
+<span class="sd">        with the floating-point data type determined by :ref:`type-promotion`</span>
+<span class="sd">        (as applied to ``x``). Default: ``None``.        </span>
 <span class="sd">    key_chains</span>
 <span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
 <span class="sd">    to_apply</span>
@@ -9926,14 +9923,14 @@
 <span class="sd">    map_sequences</span>
 <span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
 <span class="sd">    out</span>
-<span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
-<span class="sd">        inputs broadcast to.</span>
+<span class="sd">        optional output array, for writing the result to. It must have a shape that</span>
+<span class="sd">        the inputs broadcast to.</span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
-<span class="sd">        a container containing the ranks. The returned array must have a floating-point</span>
-<span class="sd">        data type determined by :ref:`type-promotion` and must have shape ``(...)``</span>
-<span class="sd">        (i.e., must have a shape equal to ``shape(x)[:-2]``).</span>
+<span class="sd">        a container containing the ranks. The returned array must have a</span>
+<span class="sd">        floating-point data type determined by :ref:`type-promotion` and must have </span>
+<span class="sd">        shape ``(...)`` (i.e., must have a shape equal to ``shape(x)[:-2]``).</span>
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    With :code: `ivy.Container` input:</span>
